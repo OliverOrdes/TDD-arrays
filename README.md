@@ -92,7 +92,7 @@ const sentence = ["sphinx", "of", "black", "quartz", "judge", "my", "vow"];
 const addLength = (total, word) => total + word.length;
 
 const reduce = (array, fn, initial){
-    let accumulator = initial;
+    let accumulator = initial ?? array[0];
     for (const element of array){
         accumulator = fn(accumulator, element);
     }
@@ -100,7 +100,10 @@ const reduce = (array, fn, initial){
 }
 ```
 
-12. What does `reduce` pass as arguments into `fn`?
-13. What does `reduce` do with the return value of `fn`?
-14. Does `reduce` mutate the original array?
-15. What would `reduce(sentence, addLength, 0)` return?
+12. `??` is the **nullish coalescing operator**. It evaluates to the left side,
+    unless the left side is null or undefined, in which case it evaluates to the right side.
+    If `initial` is not provided, what value does `accumulator` start with?
+13. What does `reduce` pass as arguments into `fn`?
+14. What does `reduce` do with the return value of `fn`?
+15. Does `reduce` mutate the original array?
+16. What would `reduce(sentence, addLength, 0)` return?
