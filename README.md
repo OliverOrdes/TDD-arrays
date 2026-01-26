@@ -48,16 +48,16 @@ const greet = (names) => {
 
 ```js
 const sentence = ["sphinx", "of", "black", "quartz", "judge", "my", "vow"];
-const getLength = word => word.length;
+const getLength = (word) => word.length;
 
-const map = (array, fn){
-    const output = [];
-    for (const element of array){
-        const result = fn(element);
-        output.push(result);
-    }
-    return output;
-}
+const map = (array, fn) => {
+  const output = [];
+  for (const element of array) {
+    const result = fn(element);
+    output.push(result);
+  }
+  return output;
+};
 ```
 
 6. In `map`, what is being pushed into the `output` array?
@@ -68,17 +68,17 @@ const map = (array, fn){
 
 ```js
 const sentence = ["sphinx", "of", "black", "quartz", "judge", "my", "vow"];
-const isShort = word => word.length <= 3;
+const isShort = (word) => word.length <= 3;
 
-const filter = (array, fn){
-    const output = [];
-    for (const element of array){
-        if (fn(element)){
-            output.push(element);
-        }
+const filter = (array, fn) => {
+  const output = [];
+  for (const element of array) {
+    if (fn(element)) {
+      output.push(element);
     }
-    return output;
-}
+  }
+  return output;
+};
 ```
 
 9. In `filter`, what is being pushed into the `output` array?
@@ -91,13 +91,13 @@ const filter = (array, fn){
 const sentence = ["sphinx", "of", "black", "quartz", "judge", "my", "vow"];
 const addLength = (total, word) => total + word.length;
 
-const reduce = (array, fn, initial){
-    let accumulator = initial ?? array[0];
-    for (const element of array){
-        accumulator = fn(accumulator, element);
-    }
-    return accumulator;
-}
+const reduce = (array, fn, initial) => {
+  let accumulator = initial ?? array[0];
+  for (const element of array) {
+    accumulator = fn(accumulator, element);
+  }
+  return accumulator;
+};
 ```
 
 12. `??` is the **nullish coalescing operator**. It evaluates to the left side,
